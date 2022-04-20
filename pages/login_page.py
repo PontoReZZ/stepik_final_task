@@ -21,7 +21,7 @@ class LoginPage(BasePage):
 
     def register_new_user(self, email, password):
         email = str(time.time()) + "@fakemail.org"
-        password = ''.join(random.choice(email+'!#$%^&*()-+') for i in range(random.randint(7,14)))
+        password = ''.join(random.choice(email+'!#$%^&*()-+') for i in range(random.randint(9,15)))
         self.browser.find_element(*LoginPageLocators.REGISTRATION_EMAIL).send_keys(email)
         self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD).send_keys(password)
         self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD_CONFIRM).send_keys(password)
