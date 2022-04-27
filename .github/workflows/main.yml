@@ -1,0 +1,3 @@
+on:
+  schedule:
+  - cron: "32 11 * * 1-5"
