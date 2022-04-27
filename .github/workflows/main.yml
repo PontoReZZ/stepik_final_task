@@ -2,7 +2,7 @@ name: Tests
 
 on:
   schedule:
-  - cron: "10 * * * 1-5"
+  - cron: "10 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: nanasess/setup-chromedriver@v1
+      - uses: browser-actions/setup-chrome@latest
+      - run: chrome --version
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
